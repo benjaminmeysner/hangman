@@ -5,13 +5,17 @@
 
 #### Usage ####
 ---
-navigate to bin/ and use:
+To run, either navigate to bin/ and use:
 
 ```
 java application.MiniProject
 ```
+or
+```
+Download and run the executable jar file resourced
+```
 
-Compile with
+Compile all files with
 
 ```
 javac GameController.java GameLogic.java IntroController.java LoadWords.java MiniProject.java StopWatch.java
