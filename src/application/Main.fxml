@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onKeyPressed="#keyPressed" style="-fx-background-color: black;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
+   <children>
+      <Pane prefHeight="506.0" prefWidth="900.0" stylesheets="@application.css">
+         <children>
+            <ImageView fitHeight="142.0" fitWidth="137.0" layoutX="46.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/drac.png" />
+               </image>
+               <effect>
+                  <Reflection bottomOpacity="0.05" fraction="1.0" topOpacity="0.0" />
+               </effect>
+            </ImageView>
+            <GridPane layoutX="257.0" layoutY="74.0" prefHeight="396.0" prefWidth="609.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="312.0" minWidth="10.0" prefWidth="131.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="502.0" minWidth="10.0" prefWidth="502.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="136.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="281.0" minHeight="10.0" prefHeight="261.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <Pane layoutX="24.0" layoutY="168.0" opacity="0.45" prefHeight="241.0" prefWidth="200.0" style="-fx-background-color: BLACK;">
+               <children>
+                  <GridPane layoutX="13.0" layoutY="43.0" prefHeight="60.0" prefWidth="170.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="127.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.0" minWidth="10.0" prefWidth="43.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Games Won" textFill="WHITE" />
+                        <Label text="Games Lost" textFill="WHITE" GridPane.rowIndex="1" />
+                        <Label text="Win %" textFill="WHITE" GridPane.rowIndex="2" />
+                        <Label fx:id="numOfWins" prefHeight="17.0" prefWidth="38.0" text="0" textFill="WHITE" GridPane.columnIndex="1" />
+                        <Label fx:id="numOfLosses" prefHeight="17.0" prefWidth="38.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="winRatio" prefHeight="17.0" prefWidth="42.0" text="0%" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <Separator layoutY="33.0" opacity="0.06" prefWidth="200.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Separator>
+                  <Separator layoutY="114.0" opacity="0.06" prefWidth="200.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Separator>
+                  <GridPane layoutX="16.0" layoutY="125.0" prefHeight="60.0" prefWidth="177.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="126.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="51.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Correct Guesses" textFill="WHITE" />
+                        <Label text="Incorrect Guesses" textFill="WHITE" GridPane.rowIndex="1" />
+                        <Label text="Guess %" textFill="WHITE" GridPane.rowIndex="2" />
+                        <Label fx:id="incorrectGuesses" prefHeight="17.0" prefWidth="41.0" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="correctGuesses" prefHeight="17.0" prefWidth="49.0" text="0" textFill="WHITE" GridPane.columnIndex="1" />
+                        <Label fx:id="guessRatio" prefHeight="17.0" prefWidth="45.0" text="0%" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="16.0" layoutY="8.0" prefHeight="19.0" prefWidth="50.0" text="Welcome" textFill="WHITE" />
+                  <Label fx:id="selectedName" layoutX="73.0" layoutY="7.0" prefHeight="19.0" prefWidth="112.0" text="  " textFill="WHITE" />
+                  <Separator layoutX="5.0" layoutY="193.0" opacity="0.06" prefWidth="200.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Separator>
+                  <Label layoutX="19.0" layoutY="207.0" text="Points" textFill="#6dff69" />
+                  <Label fx:id="pointsTotal" layoutX="143.0" layoutY="199.0" prefHeight="38.0" prefWidth="51.0" style="-fx-font-size: 20;" text="0" textFill="#6dff69">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <Pane layoutX="246.0" layoutY="61.0" opacity="0.8" prefHeight="385.0" prefWidth="633.0" style="-fx-background-color: BLACK;">
+               <children>
+                  <Label id="selectedWord" fx:id="maskedWord" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="60.0" layoutX="223.0" layoutY="276.0" lineSpacing="5.0" prefHeight="94.0" prefWidth="401.0" style="-fx-font-family: OliverTwist; -fx-font-size: 80;" stylesheets="@application.css" textFill="WHITE">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                     <effect>
+                        <Reflection fraction="0.13" topOpacity="0.27" />
+                     </effect>
+                  </Label>
+                  <Pane layoutX="-1.0" layoutY="1.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="385.0" prefWidth="210.0" style="-fx-background-color: black;" />
+                  <Label id="lbl" fx:id="label1" graphicTextGap="0.0" layoutX="24.0" layoutY="18.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" rotate="-15.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="A" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label id="lbl" fx:id="label2" layoutX="68.0" layoutY="18.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="B" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label3" layoutX="113.0" layoutY="18.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="38.0" prefWidth="17.0" rotate="5.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="C" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label4" layoutX="167.0" layoutY="18.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" rotate="15.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="D" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label5" layoutX="25.0" layoutY="77.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="39.0" prefWidth="17.0" rotate="-12.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="E" textFill="WHITE" />
+                  <Label id="lbl" fx:id="label6" layoutX="68.0" layoutY="77.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="39.0" prefWidth="17.0" rotate="-6.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="F" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label7" layoutX="113.0" layoutY="77.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="39.0" prefWidth="17.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="G" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label8" layoutX="166.0" layoutY="77.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" rotate="12.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="H" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label9" layoutX="29.0" layoutY="135.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="8.0" rotate="-15.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="I" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label10" layoutX="68.0" layoutY="135.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" rotate="-10.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="J" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label11" layoutX="112.0" layoutY="135.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" rotate="12.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="K" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label12" layoutX="167.0" layoutY="140.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="L" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label13" layoutX="20.0" layoutY="189.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" rotate="-3.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="M" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label14" layoutX="68.0" layoutY="189.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" rotate="-2.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="N" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label15" layoutX="113.0" layoutY="194.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" rotate="10.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="O" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label16" layoutX="168.0" layoutY="194.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="8.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="P" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label17" layoutX="21.0" layoutY="249.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="Q" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label18" layoutX="67.0" layoutY="249.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="19.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="R" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label19" layoutX="115.0" layoutY="245.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="13.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="S" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label20" layoutX="169.0" layoutY="249.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="39.0" prefWidth="13.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="T" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label21" layoutX="19.0" layoutY="308.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="19.0" style="-fx-cursor: hand; -fx-font-size: 30; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="U" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label22" layoutX="43.0" layoutY="308.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="18.0" style="-fx-cursor: hand; -fx-font-size: 30; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="V" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label23" layoutX="68.0" layoutY="308.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="17.0" style="-fx-cursor: hand; -fx-font-size: 30; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="W" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label24" layoutX="97.0" layoutY="304.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="39.0" prefWidth="18.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="X" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label25" layoutX="131.0" layoutY="304.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="39.0" prefWidth="18.0" style="-fx-cursor: hand; -fx-font-size: 40; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="Y" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label id="lbl" fx:id="label26" layoutX="166.0" layoutY="308.0" mnemonicParsing="true" onMouseClicked="#makeGuess" prefHeight="30.0" prefWidth="18.0" style="-fx-cursor: hand; -fx-font-size: 30; -fx-font-family: OliverTwist;" stylesheets="@application.css" text="Z" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Separator layoutX="203.0" opacity="0.04" orientation="VERTICAL" prefHeight="349.0" prefWidth="17.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Separator>
+                  <Separator layoutX="211.0" layoutY="258.0" opacity="0.06" prefHeight="26.0" prefWidth="423.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Separator>
+                  <ImageView fx:id="hangManImage" fitHeight="250.0" fitWidth="401.0" layoutX="255.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  </ImageView>
+               </children>
+            </Pane>
+            <Button layoutX="355.0" layoutY="23.0" mnemonicParsing="false" onMouseClicked="#saveGame" prefHeight="26.0" prefWidth="100.0" style="-fx-cursor: hand;" text="save game" />
+            <Pane layoutX="24.0" layoutY="418.0" opacity="0.45" prefHeight="67.0" prefWidth="200.0" style="-fx-background-color: BLACK;">
+               <children>
+                  <Label fx:id="gameMsg" alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="53.0" prefWidth="170.0" text="Label" textFill="#6dff69" wrapText="true" />
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect></Pane>
+            <Button layoutX="244.0" layoutY="22.0" mnemonicParsing="false" onMouseClicked="#loadGame" prefHeight="26.0" prefWidth="100.0" style="-fx-cursor: hand;" text="load game" />
+            <Button fx:id="newWord" layoutX="600.0" layoutY="468.0" mnemonicParsing="false" onAction="#newWord" prefHeight="26.0" prefWidth="100.0" style="-fx-cursor: hand;" text="new word">
+               <effect>
+                  <DropShadow color="#141313" height="35.09" radius="17.97" width="38.79" />
+               </effect></Button>
+            <Label layoutX="24.0" layoutY="147.0" text="statistics" textFill="WHITE">
+               <effect>
+                  <DropShadow />
+               </effect></Label>
+            <Label fx:id="selectedWord" layoutX="562.0" layoutY="10.0" style="-fx-font-family: TinyBoxBitA10;" stylesheets="@application.css" text="label" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="723.0" layoutY="472.0" text="difficulty: " textFill="WHITE">
+               <effect>
+                  <DropShadow />
+               </effect></Label>
+            <Label fx:id="difficulty" layoutX="782.0" layoutY="471.0" text="A" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <ChoiceBox fx:id="difficultyBox" layoutX="389.0" layoutY="466.0" prefWidth="150.0" value="Easiest">
+               <effect>
+                  <DropShadow height="0.0" radius="29.2125" spread="0.19" width="118.85" />
+               </effect>
+            </ChoiceBox>
+            <Label layoutX="669.0" layoutY="25.0" text="Save / Load game with F5 / F9" textFill="WHITE">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <Button layoutX="464.0" layoutY="23.0" mnemonicParsing="false" onMouseClicked="#openHelp" prefHeight="26.0" prefWidth="85.0" style="-fx-cursor: hand;" text="help" />
+            <Label layoutX="14.0" layoutY="6.0" onMouseClicked="#showWord" style="-fx-cursor: hand;" text="Show word" textFill="WHITE" />
+            <Label layoutX="82.0" layoutY="6.0" text="(testing / assessment use only)" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="selectedWord" layoutX="23.0" layoutY="20.0" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

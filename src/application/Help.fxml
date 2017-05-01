@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="412.0" style="-fx-background-color: #0c0c0c;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="23.0" layoutY="14.0" text="Welcome to the player help menu" textFill="WHITE" />
+      <Label layoutX="23.0" layoutY="40.0" prefHeight="88.0" prefWidth="376.0" text="To begin you will of needed to enter your name, this should show in the middle left of the screen next to Welcome. To start a new game you are required to select a difficulty from the menu and click &quot;new word&quot;. " textFill="#bfbfbf" wrapText="true" />
+      <Label layoutX="23.0" layoutY="128.0" prefHeight="17.0" prefWidth="354.0" text="Easiest  - 5 letter word ( 2 points )" textFill="WHITE" />
+      <Label layoutX="23.0" layoutY="145.0" prefHeight="17.0" prefWidth="354.0" text="Easy      - 6 letter word ( 4 points )" textFill="WHITE" />
+      <Label layoutX="23.0" layoutY="162.0" prefHeight="17.0" prefWidth="354.0" text="Medium - 7 letter word ( 8 points )" textFill="WHITE" />
+      <Label layoutX="23.0" layoutY="179.0" prefHeight="17.0" prefWidth="354.0" text="Hard       - 8 letter word ( 12 points )" textFill="WHITE" />
+      <Label layoutX="23.0" layoutY="200.0" prefHeight="180.0" prefWidth="376.0" text="You may keep guessing letters correctly or incorrectly within the word as long as the hangman is not in its final state or the game has not been completed. You can only change difficulty or select a new word once that particular game has been completed. All guesses, either incorrect or guesses count towards your final score, you are also scored on the amount of games you win or lose.  You may also save the current game state by clicking &quot;save game&quot;, and load that game state back in by clicking &quot;load game&quot;. You may also use F5 to save your game and F9 to load that save spot back in. Have fun playing!" textFill="#bfbfbf" wrapText="true" />
+   </children>
+</Pane>
